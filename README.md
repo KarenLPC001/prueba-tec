@@ -1,5 +1,32 @@
 # PruebaTec
 
+El proyecto con el que se desarrollo la API REST se encuentra comprimido con el mismo nombre con el que fue enviado.
+
+Ademas, se explica la manera en la que se hizo la integracion entre la API y Angular.
+Nota: Cabe aclarar que la version de angular es la 16, puesto que la version 10 del aplicativo generaba problemas a la hora de querer integrar el servicio de HTTPClient.
+
+# La integración
+
+Dentro del proyecto `Prueba_Dev_front` existe un archivo llamado `Program.cs`, este archivo fue modificado agregando servicios y metodos para permitir el acceso entre servidores, puesto que es necesario e indispensable que la `API REST` permita el acceso para consultar la información que contiene la API.
+
+Explicitamente, se agregarón estas lineas de código:
+
+`builder.Service.AddCors(
+ options => {
+ options.AddPolicy("AllowAngularOrigins",
+ builder => builder
+    .WithOrigins("http://localhost:4200")
+    .AllowAnyHeader()
+    .AllowAnyMethod());
+});`
+
+`app.UseCors("AllowAngularOrigins");`
+
+Esto con el fin de permitir el acceso a la información a la dirección de Angular, es decir: `http://localhost:4200`
+
+Finalmente, dentro de Angular, en el archivo `api.service` que se encuentra dentro del servico `service`, se hace uso del import `HttpClient` y se indica la URL de en donde se encuentra la informacion que necesitamos, en este caso: `http://localhost:5273/WeatherForecast`. Esta dirección aloja informacion sobre el clima y es la direccion que utiliza el servicio para mostrar la informacion al hacer la peticion `GET`.
+
+# Sobre Angular
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10.
 
 ## Development server
