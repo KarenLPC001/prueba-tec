@@ -26,6 +26,23 @@ Esto con el fin de permitir el acceso a la información a la dirección de Angul
 
 Finalmente, dentro de Angular, en el archivo `api.service` que se encuentra dentro del servico `service`, se hace uso del import `HttpClient` y se indica la URL de en donde se encuentra la informacion que necesitamos, en este caso: `http://localhost:5273/WeatherForecast`. Esta dirección aloja informacion sobre el clima y es la direccion que utiliza el servicio para mostrar la informacion al hacer la peticion `GET`.
 
+# Integración del patrón de diseño Redux
+
+Para integrar el patrón de diseño redux se hizo necesario crear un nuevo grupo de carpetas, que según la arquitectura de Redux `(ngrx)`, existen:
+una carpeta general llamada:
+-`Store`
+Y los elementos que van dentro de esta:
+1. `Actions`
+2. `Effects`
+3. `Reduceers`
+4. `Selectors`
+
+Cada una conformando y haciendo parte esencial para el `control de los estados` y `acciones` de la aplicacion, asi mismo se modifico el archivo `api.service.ts`, para acoplarlo al funcionamiento con la integración del patrón.
+
+En la imágen de Angular, se lograra apreciar la `obtencion de los datos de la API externa`, y un conjunto de `mensajes` asociados a la integracion del patron.
+
+![image](https://github.com/KarenLPC001/prueba-tec/assets/149728928/4598bf38-6d1c-4712-bffc-590c544e1d9f)
+
 # Sobre Angular
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10.
 
