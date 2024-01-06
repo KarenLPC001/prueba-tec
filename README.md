@@ -30,7 +30,7 @@ Finalmente, dentro de Angular, en el archivo `api.service` que se encuentra dent
 
 Para integrar el patrón de diseño redux se hizo necesario crear un nuevo grupo de carpetas, que según la arquitectura de Redux `(ngrx)`, existen:
 una carpeta general llamada:
--`Store`
+1. `Store`
 Y los elementos que van dentro de esta:
 1. `Actions`
 2. `Effects`
